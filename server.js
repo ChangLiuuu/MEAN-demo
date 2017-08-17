@@ -1,14 +1,24 @@
-const express = require('express');
-const route = require('./route/index');
-var server = express();
+var express = require('express');
+var app = express();
+var path = require('path');
+var bodyParser = require('body-parser');
 
-server.listen(8080);
+var routes = require('./api/routes');
 
-server.use(function (req, res) {
+app.set('port', 3000);
+
+app.use(function(req, res, next) {
     console.log(req.method, req.url);
-})
-//route
+    next();
+});
 
+app.use(express.static(path.join(__dirname, 'public')));
 
-server.use('/home', route);
+app.use(bodyParser.urlencoded({extended: false}));
 
+app.use('/api', routes);
+
+var server = app.listen(app.get('port'), function() {
+    var port = server.address().port;
+    console.log('Magic happens on port ' + port);
+});
