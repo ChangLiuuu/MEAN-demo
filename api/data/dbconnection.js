@@ -15,7 +15,7 @@ var open = function() {
             return;
         }
         _connection = db;
-        console.log('This is db open:', db);
+
     });
 
     // set _connection
