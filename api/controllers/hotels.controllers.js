@@ -93,8 +93,26 @@ module.exports.hotelsGetOne = function(req, res) {
 
 module.exports.hotelsAddOne = function(req, res) {
     console.log("POST new hotel");
-    console.log(req.body);
-    res
-        .status(200)
-        .json(req.body);
+    var db = dbconn.get();
+    var collection = db.collection('hotel');
+    var newHotel;
+
+    if (req.body && req.body.name && req.body.stars) { //postman测试
+        newHotel = req.body;
+        newHotel.stars = parseInt(req.body.stars, 10);
+        console.log(newHotel);
+        res
+            .status(200)
+            .json(req.body);
+    } else {
+        console.log("Data missing from body");
+        res
+            .status(400)
+            .json({message : "Required data missing from body"});
+    }
+
+    // console.log(req.body);
+    // res
+    //     .status(200)
+    //     .json(req.body);
 };
