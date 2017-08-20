@@ -92,7 +92,7 @@ module.exports.hotelsGetOne = function(req, res) {
 };
 
 module.exports.hotelsAddOne = function(req, res) {
-    console.log("POST new hotel");
+    console.log("POST new hotel.");
     var db = dbconn.get();
     var collection = db.collection('hotel');
     var newHotel;
@@ -101,9 +101,13 @@ module.exports.hotelsAddOne = function(req, res) {
         newHotel = req.body;
         newHotel.stars = parseInt(req.body.stars, 10);
         console.log(newHotel);
+        collection.insertOne(newHotel, function(err, response) {
+            console.log(response);
+        });
         res
-            .status(200)
-            .json(req.body);
+            .status(201)
+            // .json(req.body);
+            .json(response.ops);
     } else {
         console.log("Data missing from body");
         res
