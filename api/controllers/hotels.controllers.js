@@ -1,13 +1,13 @@
 var dbconn = require('../data/dbconnection.js');
 var ObjectId = require('mongodb').ObjectId;
-var hotelData = require('../data/hotel-data.json');
+// var hotelData = require('../data/hotel-data.json');
 
 module.exports.hotelsGetAll = function(req, res) {
 
     console.log('GET the hotels');
 
     var db = dbconn.get();
-    var collection = db.collection('hotel');
+    var collection = db.collection('hotels');
 
     // var docs = collection.find();  //return a cursor
     // docs.toArray(function(err, docs) {
@@ -74,7 +74,7 @@ module.exports.hotelsGetAll = function(req, res) {
 module.exports.hotelsGetOne = function(req, res) {
     console.log('GET hotelId', req.params.hotelId);
     var db = dbconn.get();
-    var collection = db.collection('hotel');
+    var collection = db.collection('hotels');
     var hotelId = req.params.hotelId;
     console.log('GET hotelId', hotelId);
 
@@ -85,7 +85,7 @@ module.exports.hotelsGetOne = function(req, res) {
             res
                 .status(200)
                 .json(doc);
-               // .json(hotelData[req.params.hotelId]);
+            // .json(hotelData[req.params.hotelId]);
         });
 
 
@@ -94,20 +94,23 @@ module.exports.hotelsGetOne = function(req, res) {
 module.exports.hotelsAddOne = function(req, res) {
     console.log("POST new hotel.");
     var db = dbconn.get();
-    var collection = db.collection('hotel');
+    var collection = db.collection('hotels');
     var newHotel;
 
     if (req.body && req.body.name && req.body.stars) { //postman测试
         newHotel = req.body;
         newHotel.stars = parseInt(req.body.stars, 10);
         console.log(newHotel);
-        collection.insertOne(newHotel, function(err, response) {
-            console.log(response);
-        });
-        res
-            .status(201)
-            // .json(req.body);
-            .json(response.ops);
+        collection
+            .insertOne(newHotel, function(err, response) {
+                console.log(response, '-----');
+                console.log(response.ops);
+                res
+                    .status(201)
+                    // .json(req.body);
+                    .json(response.ops);
+            });
+
     } else {
         console.log("Data missing from body");
         res

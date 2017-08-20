@@ -2,7 +2,7 @@
  * Created by liuchang on 8/18/17.
  */
 var MongoClient = require('mongodb').MongoClient;
-var dburl = 'mongodb://localhost:27017/hoteldata';
+var dburl = 'mongodb://localhost:27017/mean2';
 
 var _connection = null;
 
