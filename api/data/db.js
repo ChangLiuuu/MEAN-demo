@@ -34,6 +34,9 @@ process.on('SIGTERM', function() {
 process.once('SIGUSR2', function() {
     mongoose.connection.close(function() {
         console.log('Mongoose disconnected through app termination(SIGUSR2)');
-        process.exit(0);
+        process.kill(process.pid, 'SIGUSR2');
     });
 });
+
+// bring in schemas and models
+require('./hotels.model.js');
