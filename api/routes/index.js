@@ -19,7 +19,7 @@ router
     .post(ctrlReviews.reviewsAddOne);
 
 router
-    .route('/hotels/:hotelId/reviews/:reivewId')
+    .route('/hotels/:hotelId/reviews/:reviewId')
     .get(ctrlReviews.reviewsGetOne)
     .put(ctrlReviews.reviewsUpdateOne)
     .delete(ctrlReviews.reviewsDeleteOne);
