@@ -3,8 +3,9 @@
  */
 var mongoose = require('mongoose');
 var dburl = 'mongodb://localhost:27017/mean2';
-
+mongoose.Promise = global.Promise;
 mongoose.connect(dburl, {useMongoClient: true});//{xxx} makes warning disappeared.
+
 mongoose.connection.on('connected', function() {
     console.log('Mongoose connected to' + dburl);
 });
