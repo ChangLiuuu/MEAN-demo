@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 app.use('/api', routes);
 
-var server = app.listen(app.get('port'), function(req, res) {
+var server = app.listen(app.get('port'), (req, res) => {
     var port = server.address().port;
     console.log('Here is port ' + port);
 });
