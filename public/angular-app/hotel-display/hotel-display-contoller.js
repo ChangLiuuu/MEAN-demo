@@ -1,11 +1,11 @@
 angular.module('hotelca').controller('HotelController', HotelController);
 
-function HotelController($http, $routeParams) {
+function HotelController($routeParams, hotelDataFactory) {
     var vm = this;
     var id = $routeParams.id;
     console.log('id',id);
     vm.title = 'Hotel Information';
-    $http.get('/api/hotels/' + id).then(function(response) {
-        vm.hotel = response.data;
+    hotelDataFactory.hotelDisplay(id).then(function(response) {
+        vm.hotel = response;
     });
 }
