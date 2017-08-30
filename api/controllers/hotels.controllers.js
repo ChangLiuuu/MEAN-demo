@@ -47,8 +47,8 @@ var runGeoQuery = function(req, res) {
 
 module.exports.hotelsGetAll = function(req, res) {
 
-    console.log('GET the hotels');
-    console.log(req.query);
+    console.log('--------GET the hotels-------');
+    // console.log(req.query);
 
     var offset = 0;
     var count = 5;
@@ -90,8 +90,7 @@ module.exports.hotelsGetAll = function(req, res) {
         .skip(offset)
         .limit(count)
         .exec(function(err, hotels) {
-            console.log(err);
-            console.log(hotels);
+
             if (err) {
                 console.log("Error finding hotels");
                 res
