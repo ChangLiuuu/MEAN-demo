@@ -1,5 +1,4 @@
-/* Sticky footer styles
--------------------------------------------------- */
+
 html {
   position: relative;
   min-height: 100%;
@@ -7,10 +6,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 90px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
-.padded {
-  padding-top: 30px
-}
+
+/* ------Sticky footer styles---- */
 .footer {
   position: absolute;
   bottom: 0;
@@ -19,4 +19,71 @@ body {
   height: 90px;
   background-color: #693418;
   padding-top: 20px;
+}
+/* -------HEADING------- */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 240%;
+  word-spacing: 4px;
+}
+
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+h2:after {
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin-top: 10px;
+  background-color: #3adaff;
+  content: " ";
+}
+
+h3 {
+  font-size: 105%;
+  margin: 15px 0;
+}
+
+/* -------PARAGRAPH------- */
+p {
+  font-size: 130%;
+  width: 70%;
+  line-height: 145%;
+  margin: 2% 10%;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.address {
+  margin-left: 0;
+  color: red;
+}
+
+
+
+/* -------ICONS------- */
+.icon-big {
+  display: block;
+  font-size: 260%;
+  color: #E67E22;
+}
+
+.icon-small {
+  display: inline-block;
+  font-size: 120%;
+  color: #E67E22;
+  float: left;
 }
