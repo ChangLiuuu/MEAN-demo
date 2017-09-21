@@ -59,15 +59,15 @@ h3 {
 
 /* -------PARAGRAPH------- */
 p {
-  font-size: 130%;
+
   width: 70%;
   line-height: 145%;
-  margin: 2% 10%;
   font-weight: 300;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .address {
+  font-size: 150%;
   margin-left: 0;
   color: red;
 }
