@@ -1,5 +1,5 @@
 # MEAN-demo
-MongoDB  Express  AngularJS  NodeJS Bootstrap
+MongoDB,  Express,  AngularJS,  NodeJS, Bootstrap
 
 * This a full-stack project implemented by MEAN stack technologies
 * Designed single page UI using AngularJS with CSS framework Bootstrap.
