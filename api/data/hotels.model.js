@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-var reviewSchema = new mongoose.Schema({
+let reviewSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true
@@ -21,7 +21,7 @@ var reviewSchema = new mongoose.Schema({
     }
 });
 
-var roomSchema = new mongoose.Schema({
+let roomSchema = new mongoose.Schema({
     type : String,
     number : Number,
     description : String,
@@ -29,7 +29,7 @@ var roomSchema = new mongoose.Schema({
     price : Number
 });
 
-var hotelSchema = new mongoose.Schema({
+let hotelSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true

@@ -3,6 +3,7 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 90px;
@@ -20,6 +21,7 @@ body {
   background-color: #693418;
   padding-top: 20px;
 }
+
 /* -------HEADING------- */
 h1,
 h2,
@@ -34,7 +36,6 @@ h1 {
   font-size: 240%;
   word-spacing: 4px;
 }
-
 
 h2 {
   font-size: 180%;
@@ -59,11 +60,10 @@ h3 {
 
 /* -------PARAGRAPH------- */
 p {
-
   width: 70%;
   line-height: 145%;
   font-weight: 300;
-  margin: 15px 0;
+  
 }
 
 .address {
@@ -71,8 +71,6 @@ p {
   margin-left: 0;
   color: red;
 }
-
-
 
 /* -------ICONS------- */
 .icon-big {
@@ -86,4 +84,10 @@ p {
   font-size: 120%;
   color: #E67E22;
   float: left;
+}
+
+/* -------FORMS------- */
+.register_form {
+  width: 50%;
+  margin-left: 5%;
 }

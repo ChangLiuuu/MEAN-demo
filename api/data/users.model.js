@@ -2,9 +2,9 @@
  * Created by liuchang on 9/20/17.
  */
 
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
+let userSchema = new mongoose.Schema({
     username : {
         type : String,
         unique : true,

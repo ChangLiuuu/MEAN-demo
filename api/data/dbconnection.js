@@ -1,12 +1,12 @@
 /**
  * Created by liuchang on 8/18/17.
  */
-var MongoClient = require('mongodb').MongoClient;
-var dburl = 'mongodb://localhost:27017/mean2';
+let MongoClient = require('mongodb').MongoClient;
+let dburl = 'mongodb://localhost:27017/mean2';
 
-var _connection = null;
+let _connection = null;
 
-var open = function() {
+let open = function() {
 
     MongoClient.connect(dburl, function(err, db) {
 
@@ -21,7 +21,7 @@ var open = function() {
     // set _connection
 };
 
-var get = function() {
+let get = function() {
     return _connection;
 };
 
