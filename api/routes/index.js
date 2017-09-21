@@ -7,7 +7,7 @@ var ctrlUsers = require('../controllers/users.controllers.js');
 
 router
     .route('/hotels')
-    .get(ctrlHotels.hotelsGetAll)
+    .get(ctrlUsers.authenticate, ctrlHotels.hotelsGetAll)
     .post(ctrlHotels.hotelsAddOne); //不能用url测试了 需要postman
 
 router
