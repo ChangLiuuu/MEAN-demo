@@ -8,7 +8,9 @@ function hotelDataFactory($http) {
     return {
         hotelList : hotelList,
         hotelDisplay : hotelDisplay,
-        postReview : postReview
+        postReview : postReview,
+        complete : complete,
+        failed : failed
     };
 
     function hotelList() {
