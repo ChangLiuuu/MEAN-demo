@@ -1,7 +1,7 @@
 angular.module('hotelca').factory('AuthFactory', AuthFactory);
 function AuthFactory() {
     return {
-        auth : auth
+        auth : auth,
     };
 
     var auth = {

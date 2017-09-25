@@ -67,10 +67,9 @@ h3 {
 
 /* -------PARAGRAPH------- */
 p {
-  width: 70%;
+  width: 90%;
   line-height: 145%;
   font-weight: 300;
-
 }
 
 .address {
@@ -130,4 +129,13 @@ header {
 
 .main-text-box span {
   color: #8be3fa;
+}
+
+/* -------Hotel-display------- */
+.rating-stars {
+  margin-left: 50px;
+}
+
+.contain-box-hotel li {
+  margin-left: 20px;
 }

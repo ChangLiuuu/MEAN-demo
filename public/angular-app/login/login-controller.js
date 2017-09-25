@@ -5,8 +5,12 @@ angular.module('hotelca').controller('LoginController', LoginController);
 function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
     let vm = this;
 
+
     vm.isLoggedIn = function() {
         if (AuthFactory.isLoggedIn) {
+            let token = $window.sessionStorage.token;
+            let decodedToken = jwtHelper.decodeToken(token);
+            vm.loggedInUser = decodedToken.username;
             return true;
         } else {
             return false;
@@ -14,6 +18,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
     };
 
     vm.login = function() {
+
         if (vm.username && vm.password) {
             let user = {
                 username : vm.username,
@@ -25,7 +30,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
                     AuthFactory.isLoggedIn = true;
                     let token = $window.sessionStorage.token;
                     let decodedToken = jwtHelper.decodeToken(token);
-                    vm.loggedInUser =decodedToken.username;
+                    vm.loggedInUser = decodedToken.username;
                 }
             }).catch(function(error) {
                 console.log(error);
@@ -37,10 +42,10 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
         AuthFactory.isLoggedIn = false;
         delete $window.sessionStorage.token;
         $location.path('/');
-    }
-
+    };
     vm.isActiveTab = function(url) {
         let currentPath = $location.path().split('/')[1];
+
         return (url === currentPath ? 'active' : '');
     }
 }
