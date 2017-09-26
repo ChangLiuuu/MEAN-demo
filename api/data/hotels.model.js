@@ -30,6 +30,7 @@ let roomSchema = new mongoose.Schema({
 });
 
 let hotelSchema = new mongoose.Schema({
+
     name : {
         type : String,
         required : true

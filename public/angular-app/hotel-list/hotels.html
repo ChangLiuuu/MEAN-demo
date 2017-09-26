@@ -1,8 +1,11 @@
 <h1>{{ vm.title }}</h1>
-<div class="contain-box-hotels">
+<section class="contain-box-hotels">
 	<ul>
 		<li ng-repeat="hotel in vm.hotels">
-			<a ng-href="#!/hotel/{{ hotel._id }}">{{ hotel.name }}</a>
+			<figure>
+				<img ng-src="/images/hotels/{{ vm.hotels.indexOf(hotel) + 1 }}.png" alt="">
+			</figure>
+			<a class="hotel-names" ng-href="#!/hotel/{{ hotel._id }}">{{ hotel.name }}</a>
 		</li>
 	</ul>
-</div>
+</section>

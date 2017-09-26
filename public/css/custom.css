@@ -131,6 +131,16 @@ header {
   color: #8be3fa;
 }
 
+/* -------Hotels-list------- */
+.hotel-names{
+  text-decoration: none;
+}
+
+.contain-box-hotels img {
+  width: 25%;
+  float: left;
+}
+
 /* -------Hotel-display------- */
 .rating-stars {
   margin-left: 50px;

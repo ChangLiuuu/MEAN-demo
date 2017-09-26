@@ -98,6 +98,9 @@ module.exports.hotelsGetAll = function(req, res) {
                     .json(err);
             } else {
                 console.log("Found hotels", hotels.length);
+
+
+                console.log(hotels);
                 res
                     .json(hotels);
             }
@@ -176,6 +179,10 @@ module.exports.hotelsAddOne = function(req, res) {
 
 };
 
+
+module.exports.hotelAddImage = function(req, res) {
+    var hotelId = req
+}
 
 module.exports.hotelsUpdateOne = function(req, res) {
     var hotelId = req.params.hotelId;
