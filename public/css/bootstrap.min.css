@@ -1361,7 +1361,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #c8c8c8;
-  background-color: #272b30
+  background-color: #1E2833
 }
 
 input, button, select, textarea {
@@ -4720,6 +4720,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
   .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px
+    width : inherit;
   }
 }
 

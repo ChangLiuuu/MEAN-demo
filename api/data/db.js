@@ -2,7 +2,7 @@
  * Created by liuchang on 8/20/17.
  */
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/mean2';
+var dburl = 'mongodb://cliu6:liuchang123@ds131480.mlab.com:31480/hotelca-app';
 mongoose.Promise = global.Promise;
 mongoose.connect(dburl, {useMongoClient: true});//{xxx} makes warning disappeared.
 

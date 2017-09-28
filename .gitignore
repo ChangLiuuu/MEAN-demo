@@ -1,7 +1,0 @@
-# Created by .ignore support plugin (hsz.mobi)
-.gitignore
-.idea/
-route/
-node_modules/
-package-lock.json
-package.json
