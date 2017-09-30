@@ -7,7 +7,7 @@ let routes = require('./api/routes/index');
 
 let app = express();
 
-let port = process.env.PORT;
+// let port = process.env.PORT;
 
 app.set('port', 3000);
 
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 app.use('/api', routes);
 
-app.listen(port, function(){
-    console.log(` listening on port ${port}`);
+app.listen(app.get('port'), function(){
+    console.log('listening on port',app.get('port') );
 });
 

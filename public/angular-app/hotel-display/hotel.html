@@ -2,9 +2,9 @@
 				stars="vm.stars"></hotel-rating></span></h1>
 <div class="contain-box-hotel">
 
-	<span class="address"><small>{{ vm.hotel.location.address }}</small></span>
+	<div class="address">{{ vm.hotel.location.address }}</div><br>
 	<p>{{ vm.hotel.description }}</p>
-	<p><strong>This hotel provides the following services:</strong></p>
+	<h5>This hotel provides the following services:</h5>
 	<ul>
 		<li ng-repeat="service in vm.hotel.services">{{ service }}</li>
 	</ul>
@@ -13,21 +13,24 @@
 		<li ng-repeat="review in vm.hotel.reviews"><strong>{{ review.name }} says:</strong> {{ review.review }}</li>
 	</ul>
 
-	<form ng-if="vm.isLoggedIn()" name="vm.reviewForm" ng-submit="vm.addReview()">
-		Your name: <span>{{ vm.username }}</span>
+	<form class="review-form" ng-if="vm.isLoggedIn()" name="vm.reviewForm" ng-submit="vm.addReview()">
+		<div class="review-name">Your name: <span>{{ vm.username }}</span></div>
 
-		Your rating: <input type="number" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
-		<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-			<p>Rating must be between 1-5.</p>
+		<div class="review-rating">
+			Your rating: <input type="number" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
+			<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
+				<p>Rating must be between 1-5.</p>
+			</div>
+			<br><br>
 		</div>
-		<br><br>
 
-		Your review: <textarea name="review" required ng-model="vm.review"></textarea>
-		<div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
-			<p>Add a review.</p>
+		<div class="review-review">
+			Your review: <textarea name="review" required ng-model="vm.review"></textarea>
+			<div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
+				<p>Add a review.</p>
+			</div>
+			<br>
 		</div>
-		<br>
-
 		<button type="submit" class="btn btn-success">Add review</button>
 	</form>
 </div>
