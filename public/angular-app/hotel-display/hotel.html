@@ -2,35 +2,68 @@
 				stars="vm.stars"></hotel-rating></span></h1>
 <div class="contain-box-hotel">
 
-	<div class="address">{{ vm.hotel.location.address }}</div><br>
+	<div class="address">{{ vm.hotel.location.address }}</div>
+	<br>
 	<p>{{ vm.hotel.description }}</p>
 	<h5>This hotel provides the following services:</h5>
 	<ul>
 		<li ng-repeat="service in vm.hotel.services">{{ service }}</li>
 	</ul>
 	<h2>Reviews</h2>
-	<ul>
+	<ul class="reviews">
 		<li ng-repeat="review in vm.hotel.reviews"><strong>{{ review.name }} says:</strong> {{ review.review }}</li>
 	</ul>
 
-	<form class="review-form" ng-if="vm.isLoggedIn()" name="vm.reviewForm" ng-submit="vm.addReview()">
-		<div class="review-name">Your name: <span>{{ vm.username }}</span></div>
-
-		<div class="review-rating">
-			Your rating: <input type="number" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
-			<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-				<p>Rating must be between 1-5.</p>
+	<p>-------------------------------------------------</p>
+	<form class="form-horizontal" ng-if="vm.isLoggedIn()" name="vm.reviewForm" ng-submit="vm.addReview()">
+		<fieldset>
+			<h2>Your name:<span
+							style="color : darkturquoise">{{'&nbsp;&nbsp;&nbsp;' + vm.username }}</span></h2>
+			<div class="form-group">
+				<label for="rating" class="col-lg-2 control-label">Your rating stars:</label>
+				<div class="col-lg-6">
+					<select class="form-control has-warning" name="rating" id="rating">
+						<option value="5">⭐⭐⭐⭐⭐️</option>
+						<option value="4">⭐⭐⭐⭐</option>
+						<option value="3">⭐⭐⭐</option>
+						<option value="2">⭐⭐</option>
+						<option value="1">⭐</option>
+					</select>
+				</div>
+				<p>{{ vm.rating }}dddddd</p>
+				<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
+					<p>Rating must be between 1-5.</p>
+				</div>
 			</div>
-			<br><br>
-		</div>
 
-		<div class="review-review">
-			Your review: <textarea name="review" required ng-model="vm.review"></textarea>
-			<div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
-				<p>Add a review.</p>
+			<div class="form-group">
+				<label for="review" class="col-lg-2 control-label has-warning">Your review: </label>
+				<div class="col-lg-6">
+					<input class="form-control input-group-lg " id="review" name="review" required ng-model="vm.review">
+				</div>
+
+				<div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
+					<p>Add a review.</p>
+				</div>
+				<br>
 			</div>
-			<br>
-		</div>
-		<button type="submit" class="btn btn-success">Add review</button>
+			<button type="submit" class="btn btn-success">Add review</button>
+		</fieldset>
 	</form>
+
 </div>
+<footer>
+	<div class="logo col-lg-3">
+		<i class="ion-heart"></i>
+		<span>Love is simple. - Hotelca</span>
+	</div>
+	<div class="copyright-box">
+		<ul>
+			<li><a href="https://github.com/ChangLiuuu" target="_blank" class="icon-github"><i class="ion-social-github"></i></a>
+			</li>
+			<li><a href="https://www.linkedin.com/in/changliu6/" target="_blank" class="icon-linkedin"><i
+							class="ion-social-linkedin"></i></a></li>
+		</ul>
+		<p>No Copyright&copy; designed by 刘畅. 喜欢音乐和摄影.</p>
+	</div>
+</footer>

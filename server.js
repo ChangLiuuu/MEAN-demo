@@ -7,7 +7,7 @@ let routes = require('./api/routes/index');
 
 let app = express();
 
-// let port = process.env.PORT;
+let port = process.env.PORT;
 
 app.set('port', 3000);
 
