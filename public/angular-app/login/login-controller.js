@@ -17,7 +17,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
     };
 
     vm.login = function() {
-
+        vm.error = false;
         if (vm.username && vm.password) {
             let user = {
                 username : vm.username,
@@ -31,9 +31,9 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
                     let decodedToken = jwtHelper.decodeToken(token);
                     vm.loggedInUser = decodedToken.username;
                 }
-            }).catch(function(error) {
+            }).catch(function(err) {
                 vm.error = true;
-                console.log(error);
+                console.log(err);
             })
         }
     };

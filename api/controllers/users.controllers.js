@@ -9,13 +9,10 @@ module.exports.register = function(req, res) {
     var password = req.body.password;
 
     User.create({
-        username : username,
-        name : name,
-        password : bcrypt.hashSync(password, bcrypt.genSaltSync(10))
-    }, function(err, user) {
-        if (user.length) {
-            res.json(500, {'errorMsg' : 'Username is taken. Try another.'})
-        } else {
+            username : username,
+            name : name,
+            password : bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+        }, function(err, user) {
             if (err) {
                 console.log(res);
                 res.status(400).json(err);
@@ -24,8 +21,7 @@ module.exports.register = function(req, res) {
                 res.status(201).json(user);
             }
         }
-    });
-
+    )
 };
 
 
@@ -38,7 +34,7 @@ module.exports.login = function(req, res) {
         username : username
     }).exec(function(err, user) {
         if (err) {
-            console.log(err);
+            console.log('findOne err');
             res.status(400).json(err);
         } else {
             if (bcrypt.compareSync(password, user.password)) {
@@ -49,7 +45,9 @@ module.exports.login = function(req, res) {
                 res.status(401).json('Unauthorized');
             }
         }
-    });
+    }).catch(function() {
+        console.error('invalid username and password.', err);
+    })
 };
 
 module.exports.authenticate = function(req, res, next) {

@@ -44,6 +44,7 @@ function config($httpProvider, $routeProvider) {
                 restricted : true
             }
         })
+
         .otherwise({
             redirectTo : '/'
         });
