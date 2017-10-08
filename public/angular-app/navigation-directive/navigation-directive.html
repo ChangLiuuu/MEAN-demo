@@ -17,13 +17,13 @@
 				<li ng-class="vm.isActiveTab('register')" ng-if="!vm.isLoggedIn()"><a href="#!/register">Register</a></li>
 				<li ng-class="vm.isActiveTab('profile')" ng-if="vm.isLoggedIn()"><a href="#!/profile">Profile</a></li>
 			</ul>
+			<div  ng-if="vm.error" class="ion-ios-paw login-error" >Please enter valid username and password.</div>
 			<form ng-if="!vm.isLoggedIn()" class="navbar-form navbar-right" role="login" ng-submit="vm.login()">
-
-				<div class="form-group" ng-class="{'has-error' : vm.error}">
+				<div class="form-group">
 					<input type="text" class="form-control input-sm" placeholder="Username" ng-model="vm.username"
 								 autocapitalize="none">
 				</div>
-				<div class="form-group" ng-class="{'has-error': vm.error}">
+				<div class="form-group">
 					<input type="password" class="form-control input-sm" placeholder="Password" ng-model="vm.password"
 								 autocapitalize="none">
 				</div>

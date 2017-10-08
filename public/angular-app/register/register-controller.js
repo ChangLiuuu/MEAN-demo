@@ -3,8 +3,10 @@
  */
 angular.module('hotelca').controller('RegisterController', RegisterController);
 
+
 function RegisterController($http) {
     vm = this;
+
     vm.register = function() {
         let user = {
             username : vm.username,
@@ -13,6 +15,7 @@ function RegisterController($http) {
         if (!vm.username || !vm.password) {
             vm.error = 'Please add a username and a password.';
         } else {
+
             if (vm.password !== vm.passwordRepeat) {
                 vm.error = "Passwords do not match.";
             } else {
@@ -20,8 +23,8 @@ function RegisterController($http) {
                     console.log(result);
                     vm.message = 'Successful registration, please login.';
                     vm.error = '';
-                }).catch(function(error) {
-                    console.log(error);
+                }).catch(function() {
+                    vm.error = "User is taken. Try another one."
                 });
             }
         }

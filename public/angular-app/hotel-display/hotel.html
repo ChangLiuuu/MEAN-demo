@@ -30,7 +30,7 @@
 						<option value="1">⭐</option>
 					</select>
 				</div>
-				<p>{{ vm.rating }}dddddd</p>
+				<p>{{ vm.reviewForm.rating }}dddddd</p>
 				<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
 					<p>Rating must be between 1-5.</p>
 				</div>

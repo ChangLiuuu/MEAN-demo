@@ -5,7 +5,6 @@ angular.module('hotelca').controller('LoginController', LoginController);
 function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
     let vm = this;
 
-
     vm.isLoggedIn = function() {
         if (AuthFactory.isLoggedIn) {
             let token = $window.sessionStorage.token;
@@ -33,6 +32,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
                     vm.loggedInUser = decodedToken.username;
                 }
             }).catch(function(error) {
+                vm.error = true;
                 console.log(error);
             })
         }

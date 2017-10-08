@@ -87,6 +87,13 @@ p {
   margin-left: 5%;
 }
 
+/* -------Login Nav------- */
+
+.login-error {
+  position: relative;
+  float: right;
+}
+
 /* ------Sticky footer styles---- */
 footer {
   background-color: black;

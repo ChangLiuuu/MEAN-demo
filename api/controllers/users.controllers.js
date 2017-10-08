@@ -13,16 +13,21 @@ module.exports.register = function(req, res) {
         name : name,
         password : bcrypt.hashSync(password, bcrypt.genSaltSync(10))
     }, function(err, user) {
-        if (err) {
-            console.log(err);
-            res.status(400).json(err);
+        if (user.length) {
+            res.json(500, {'errorMsg' : 'Username is taken. Try another.'})
         } else {
-            console.log("user created", user);
-            res.status(201).json(user);
+            if (err) {
+                console.log(res);
+                res.status(400).json(err);
+            } else {
+                console.log("user created", user);
+                res.status(201).json(user);
+            }
         }
     });
 
 };
+
 
 module.exports.login = function(req, res) {
     console.log("logging in user");
