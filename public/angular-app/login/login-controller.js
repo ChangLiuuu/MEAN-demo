@@ -36,6 +36,9 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper) {
                 console.log(err);
             })
         }
+        return {
+            username : user.username
+        }
     };
 
     vm.logout = function() {

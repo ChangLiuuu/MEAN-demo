@@ -8,12 +8,3 @@ function HotelsController(hotelDataFactory) {
     });
 
 }
-
-function imageNum() {
-    // let array = [];
-    // for (let n = 1; n <= vm.hotels.length; n++) {
-    //     array.push(n);
-    // }
-    // vm.imageNum = array;
-
-}
