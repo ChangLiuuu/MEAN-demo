@@ -9,7 +9,7 @@ let app = express();
 
 let port = process.env.PORT;
 
-app.set('port', 3000);
+// app.set('port', 3000);
 
 app.use(function(req, res, next) {
     console.log(req.method, req.url);

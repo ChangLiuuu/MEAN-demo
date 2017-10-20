@@ -4835,8 +4835,8 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-btn.btn-sm {
-  margin-top: 10px;
-  margin-bottom: 10px
+  margin-top: 5px;
+  margin-bottom: 5px
 }
 
 .navbar-btn.btn-xs {
@@ -4845,8 +4845,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px
+  margin-top: 10px;
 }
 
 @media (min-width: 768px) {

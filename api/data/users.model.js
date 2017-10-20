@@ -10,7 +10,7 @@ let userSchema = new mongoose.Schema({
         unique : true,
         required : true
     },
-    name : {
+    email : {
         type : String
     },
     password : {
