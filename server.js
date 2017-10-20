@@ -26,7 +26,10 @@ app.use(bodyParser.json());
 
 app.use('/api', routes);
 
-app.listen(app.get('port'), function(){
-    console.log('listening on port',app.get('port') );
-});
+// app.listen(app.get('port'), function(){
+//     console.log('listening on port',app.get('port') );
+// });
 
+app.listen(port, function(){
+    console.log('listening on port', port );
+});
