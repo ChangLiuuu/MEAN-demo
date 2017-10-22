@@ -1,12 +1,10 @@
 <h1>Register</h1>
 <div ng-if="vm.message" class="alert alert-success" role="alert">
-	<p class="register_warn">{{ vm.message }}
-	<p>
+	<p class="register_warn">{{ vm.message }}<p>
 </div>
 
 <div ng-if="vm.error" class="alert alert-danger" role="alert">
-	<p class="register_warn">{{ vm.error }}
-	<p>
+	<p class="register_warn">{{ vm.error }}<p>
 </div>
 
 <form class="register_form" ng-hide="vm.message" name="register" ng-submit="vm.register()">
@@ -29,7 +27,7 @@
 	</div>
 	<button type="submit" class="btn btn-success">Register</button>
 </form>
-<footer class="regi-footer">
+<footer class="regi-footer" ng-hide="vm.message">
 	<div class="copyright-box">
 		<ul>
 			<li><a href="https://github.com/ChangLiuuu" target="_blank" class="icon-github"><i class="ion-social-github"></i></a>

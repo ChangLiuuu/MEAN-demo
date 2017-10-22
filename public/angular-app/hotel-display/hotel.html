@@ -22,17 +22,13 @@
 			<div class="form-group">
 				<label for="rating" class="col-lg-2 control-label">Your rating stars:</label>
 				<div class="col-lg-6">
-					<select class="form-control has-warning" ng-model="rating"  id="rating">
+					<select class="form-control has-warning" ng-model="vm.rating"  name="rating">
 						<option value="5">⭐⭐⭐⭐⭐️</option>
 						<option value="4">⭐⭐⭐⭐</option>
 						<option value="3">⭐⭐⭐</option>
 						<option value="2">⭐⭐</option>
 						<option value="1">⭐</option>
 					</select>
-				</div>
-				<p>{{ vm.reviewForm.rating }}dddddd</p>
-				<div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-					<p>Rating must be between 1-5.</p>
 				</div>
 			</div>
 
